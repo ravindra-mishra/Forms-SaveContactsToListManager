@@ -24,9 +24,9 @@ namespace Feature.FormsExtensions.SubmitActions
             Assert.ArgumentNotNull(data, nameof(data));
             Assert.ArgumentNotNull(formSubmitContext, nameof(formSubmitContext));
 
-            var firstNameField = formSubmitContext.Fields.FirstOrDefault(field => field.Name.Equals("FirstName"));
-            var lastNameField = formSubmitContext.Fields.FirstOrDefault(field => field.Name.Equals("LastName")); ;
-            var emailField = formSubmitContext.Fields.FirstOrDefault(field => field.Name.Equals("Email"));
+            var firstNameField = GetFieldById(data.FirstNameFieldId, formSubmitContext.Fields);
+            var lastNameField = GetFieldById(data.LastNameFieldId, formSubmitContext.Fields);
+            var emailField = GetFieldById(data.EmailFieldId, formSubmitContext.Fields);
 
             if (firstNameField == null && lastNameField == null && emailField == null)
             {
@@ -37,7 +37,7 @@ namespace Feature.FormsExtensions.SubmitActions
             {
                 using (var client = CreateClient())
                 {
-                    return SaveContactInListManager(client, firstNameField, lastNameField, emailField, data.ReferenceId);
+                    return SaveContactInListManager(client, firstNameField, lastNameField, emailField, data.ContactListId);
                 }
             }
             catch (XdbExecutionException exception)
@@ -135,7 +135,7 @@ namespace Feature.FormsExtensions.SubmitActions
         private void SetSubscriptionList(IXdbContext client, Contact contact, Guid contactListId)
         {
             var subscriptions = contact.ListSubscriptions();
-            
+
             var listSubscription = subscriptions?.Subscriptions.FirstOrDefault(sub => sub.ListDefinitionId == contactListId && sub.IsActive == true);
 
             if (listSubscription != null)
