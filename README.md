@@ -10,9 +10,9 @@ Custom Submit Action for Sitecore Forms to Save Contacts in Sitecore List Manage
 2. Clone the repository Forms-SaveContactsToListManager (https://github.com/ravindra-mishra/Forms-SaveContactsToListManager)
 3. Build the solution
 4. Copy the Feature.FormsExtensions.dll to your webroot\bin
-5. Follow instructions given on the blog to create SPEAK editor OR Install the sitecore package Core-SaveToContactList-SPEAK-Editor (./SitecorePackages/Core-SaveToContactList-SPEAK-Editor.zip).
-6. Copy /sitecore/shell/client/Applications/FormsBuilder/Layouts/Actions/SaveToContactList.js file to  webroot/sitecore/shell/client/Applications/FormsBuilder/Layouts/Actions path (If you are installing sitecore package you can skip this step as it is already included in package.)
-7. Follow instructions given on Step 2: Create submit action item in master database of the blog OR Install the sitecore package Master-SaveToContactList-SubmitAction (./SitecorePackages/Master-SaveToContactList-SubmitAction.zip).
+5. Follow instructions given on the blog to [create SPEAK editor](https://blogs.perficient.com/2023/06/01/submit-action-to-save-contacts-in-list-manager-with-fields-mapping-part-1/#create-speak-editor) OR Install the sitecore package [Core-SaveToContactList-SPEAK-Editor](./SitecorePackages/Core-SaveToContactList-SPEAK-Editor.zip).
+6. Copy [SaveToContactList.js](https://github.com/ravindra-mishra/Forms-SaveContactsToListManager/blob/master/Feature.FormsExtensions/sitecore/shell/client/Applications/FormsBuilder/Layouts/Actions/SaveToContactList.js) file to  webroot/sitecore/shell/client/Applications/FormsBuilder/Layouts/Actions path (If you are installing sitecore package you can skip this step as it is already included in package.)
+7. Follow instructions given on [Step 2: Create submit action item in master database of the blog](https://blogs.perficient.com/2023/06/02/submit-action-to-save-contacts-in-list-manager-with-fields-mapping-part-2/#submitActionClassAndItem) OR Install the sitecore package [Master-SaveToContactList-SubmitAction](https://github.com/ravindra-mishra/Forms-SaveContactsToListManager/blob/master/SitecorePackages/Master-SaveToContactList-SubmitAction.zip)
 8. Login to Sitecore and follow the steps as below
 9. Create an empty contact list called "Customer Contact List" in Lanchpad > List Manager > Create > Empty Contact List.
 10. Make a sitecore form with the fields First Name, Last Name, and Email.
@@ -27,6 +27,8 @@ Custom Submit Action for Sitecore Forms to Save Contacts in Sitecore List Manage
 ## Perficient Blog Post 
 https://blogs.perficient.com/author/rmishra/
 1. Add PowerShell Script to the Context Menu in Sitecore SXA - https://blogs.perficient.com/2022/09/30/add-powershell-script-to-the-context-menu-in-sitecore-sxa/
+2. Submit Action to Save Contacts in List Manager – Basic Implementation - https://blogs.perficient.com/2023/05/13/submit-action-to-save-contacts-in-list-manager-basic-implementation/
+3. Submit Action to Save Contacts in List Manager with Fields Mapping - https://blogs.perficient.com/2023/06/01/submit-action-to-save-contacts-in-list-manager-with-fields-mapping-part-1/
 
 ## Personal Sitecore Blog
 https://dailysitecore.blogspot.com/
